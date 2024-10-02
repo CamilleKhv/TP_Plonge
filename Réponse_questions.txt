@@ -1,3 +1,5 @@
-Le nombre d'assiettes et la pile d'assiettes augmentent correctement sans doublons, mais il n'y a pas d'essuyeur. La pile d'assiette est correcte grâce à un synchronized public Assiette pop() dans la classe PileDAssiette, ainsi un seul thread manipule un objet. Or l'essuyeur est bloqué car la pile reste vide pour lui car il n'est pas notifié sur l'état de la pile d'assiette, il faut un notifyAll().
-Par contre le push n'est pas synchronized. 
+1) Le nombre d'assiettes et la pile d'assiettes augmentent correctement sans doublons, mais il n'y a pas d'essuyeur.
+Il n'y a pas de problème d'empilement car il n'y a pas d'accès simultané à la pile d'assiette, l'accès est instantané. Les laveur remplissent la pile a des instants différents.
+La pile se remplit à l'infini car il n'y avait pas de vérification sur l'élément isFull()
 
+2) La pile d'assiette est correcte grâce à un synchronized public Assiette pop() dans la classe PileDAssiette, ainsi un seul thread manipule un objet. Or l'essuyeur est bloqué car la pile reste vide pour lui car il n'est pas notifié sur l'état de la pile d'assiette, il faut un notifyAll().
