@@ -1,0 +1,3 @@
+Le nombre d'assiettes et la pile d'assiettes augmentent correctement sans doublons, mais il n'y a pas d'essuyeur. La pile d'assiette est correcte grâce à un synchronized public Assiette pop() dans la classe PileDAssiette, ainsi un seul thread manipule un objet. Or l'essuyeur est bloqué car la pile reste vide pour lui car il n'est pas notifié sur l'état de la pile d'assiette, il faut un notifyAll().
+Par contre le push n'est pas synchronized. 
+
